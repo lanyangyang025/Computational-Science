@@ -1,0 +1,78 @@
+%%%%Select the class of document
+\documentclass[11pt]{article} 
+
+%%%%Select packages
+\usepackage{amsthm,amsmath,amssymb} %math packages (always include)
+\usepackage{geometry} %can be used to modify page dimensions, etc.
+\usepackage{graphicx} %figure
+\usepackage{multirow} %table with multirow
+\usepackage[labelfont=rm]{subcaption} %subcaption of figure
+\usepackage{listings} %use to list command or else in block
+\usepackage{xcolor}  %allow to display color
+\usepackage{natbib}  
+%Note that you can copy the content of mydef.sty here and comment the above line.
+%%%%End Customize commands
+
+%%%% Define a style used to display a block of Latex code
+\lstdefinestyle{CStyle}{
+language={C},
+frame=single,
+backgroundcolor=\color{white},
+basicstyle=\small\ttfamily,
+keywordstyle=\color{blue},  
+commentstyle=\color{red},
+stringstyle=\color{black},
+directivestyle=\color{purple},  
+showspaces =false,
+showstringspaces=false
+}
+
+
+%%%% Set up title page information
+\title{CAAM 519: Final 2017: Homework 2}
+\author{Yiqing Lu}
+\date{\today}
+%%%% End Set up title page information
+
+\begin{document}
+
+\maketitle
+\section{Sections and Labels} 
+\subsection{First subsection} \label{sec:sec1_sub1}
+\subsection{Second subsection} 
+Reference to section 1.1.~\ref{sec:sec1_sub1}.
+
+\section{Equations} 
+$$\nabla u= y^2 + \dfrac{x}{1+x^2}$$
+
+\section{Figures} 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.2\textwidth]{Rice_Owls_logo.png}
+\caption{Rice’s Owl logo.}
+\label{fig:first_fig}
+\end{figure}
+
+\section{Block of C code} 
+This is a block of C code:
+\begin{lstlisting}[style=CStyle]
+# include <iostream .c>
+main(){
+// Declaration of a
+int a ;
+// Definition of a
+a=2;
+// Print a on terminal
+printf("a = %d \n", a );
+}
+\end{lstlisting}
+
+\section{Cite and article} 
+This is a book about finite element method\cite{erntheory}.
+
+%%% Add bibliography if any
+\bibliographystyle{abbrvnat}  %select the style
+\bibliography{biblio} % select the files (without the .bib)
+
+%%%% End document
+\end{document}

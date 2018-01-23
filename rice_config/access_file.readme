@@ -1,0 +1,61 @@
+#
+# Rice Specific Subversion information can be found here:
+#
+#	* Campus Repositories : https://docs.rice.edu/confluence/x/IYJn
+#	* IT Repositories     : https://docs.rice.edu/confluence/x/fYJn
+#	* HPC Repositories    : https://docs.rice.edu/confluence/x/kolu
+#
+# If you don't which repository group above your repository is in, it is 
+#	a good bet to look at the first URL above.
+#
+###############################################################################
+#
+# Subversion Access file
+#
+# The file, access_file, enables you to control access to your repository.  
+#
+# ***Please be careful when changing it because you CAN change the permissions 
+#	to lock yourself out***
+#
+# Lines that contain a value in brackets ([]) are special.
+# Lines that begin with a hash (#) are comments.  You can use comments 
+#	within the access_file but they can not appear at the beginning
+#	of the file.
+#
+# This file is made up of simple blocks.  Each block begins with an entry in
+#	hard brackets ([]).  One block is special, it contains the word groups
+#	in brackets.  This special block allows you to define groups of users
+#	that can be used in other blocks.  There can only be one [groups] block
+#	in this file.
+#
+#	[groups]
+#	group1 = user1, user2, user3, user4
+#	group2 = user3, user4
+#
+# The other blocks in the file specify the permissions for a specific area of
+#	the repository.  The value within the brackets gives the location 
+#	within the repository that the permissions following it affect.
+#
+#	[/]
+#	user = rw
+#	@group1 = r
+#	@group2 =
+#	* = 
+#
+#	Explaination:
+#	
+#		"user" has READ and WRITE access
+#		All users of "group1" have READ access 
+#		All permissions are removed from the users in "group2"
+#		All permissions are removed from ALL users
+#
+# The block, [/rice_config], is really important.  This block controls
+#	who has access to update this file.  It is recommended that you not
+#	mess with this block unless you know what you are doing.  If you 
+#	remove your access from this block, you will not be able to change
+#	the permissions for your repository and probably will not be able
+#	to even access your repository.
+#
+# Please see http://svnbook.red-bean.com/nightly/en/svn-book.html for 
+#	more information about Subversion and this access file.
+#
